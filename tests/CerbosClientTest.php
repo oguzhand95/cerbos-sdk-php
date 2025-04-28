@@ -204,7 +204,7 @@ final class CerbosClientTest extends TestCase
                 Resource::newInstance("leave_request", "XX125")
                     ->withPolicyVersion("20210210")
             )
-            ->withAction("approve");
+            ->withActions(array("approve"));
 
 
         try {
@@ -253,7 +253,7 @@ final class CerbosClientTest extends TestCase
                     ->withPolicyVersion("20210210")
                     ->withAttribute("department", AttributeValue::stringValue("accounting"))
             )
-            ->withAction("approve");
+            ->withActions(array("approve"));
 
         try {
             $planResourcesResult = $this->client->planResources($request, $this->metadata);
